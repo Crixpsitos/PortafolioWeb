@@ -6,6 +6,10 @@ import Boostrap from '../icons/Boostrap.astro'
 import Github from '../icons/Github.astro'
 import LinkButton from './LinkButton.astro'
 import Link from '../icons/Link.astro'
+import Image from 'astro/components/Image.astro'
+import TaskDjango from '../projects/TaskDjango.webp'
+import TaskProject from '../projects/TaskProject.webp'
+
 
 const TAGS = {
     DJANGO: {
@@ -36,7 +40,7 @@ const TAGS = {
         "Un CRUD basico en Django para experimentar mis habilidades con una app basica de tareas con autenticacion de usuarios, modelos, formularios etc. ",
       link: "https://django-auth-crud-fbs5.onrender.com",
       github: "https://github.com/Crixpsitos/django-auth-crud",
-      image: "src/projects/TaskDjango.webp",
+      image: TaskDjango,
       tags: [TAGS.DJANGO, TAGS.BOOSTRAP],
     },
     {
@@ -44,7 +48,7 @@ const TAGS = {
       description:
         "Pagina para la experimentacion de APIS con Django Rest framework con el uso de react-hook-form y axios para obtener los datos y hacer un CRUD sencillo",
       github: "https://github.com/Crixpsitos/Django-react-task",
-      image: "src/projects/TaskProject.webp",
+      image: TaskProject,
       tags: [TAGS.DJANGO, TAGS.TAILWIND, TAGS.REACT],
     },
   ]
@@ -52,11 +56,11 @@ const TAGS = {
   
   <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({image, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
+    <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Imagenes del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="eager" src={image} />
+      <Image alt="Imagenes del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="eager" src={image} />
     </div>
   </div>
 
