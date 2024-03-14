@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import { Image } from 'astro:assets';
+import CristianFoto from '../imagenes/CristianFoto.jpeg'
+import Download from '../components/Download.astro' 
+import Github from '../icons/Github.astro'
+import LinkeIn from '../icons/LinkeIn.astro';
+import Socialpill from '../components/Socialpill.astro'
+import Mail from '../icons/Mail.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import Code from '../icons/Code.astro'
+import Projects from '../components/Projects.astro'
+import ProfileCheck from '../icons/ProfileCheck.astro'
+import AboutMe from '../components/AboutMe.astro'
+---
+
+<Layout title="Portafolio De Cristian Peña - Desarrollador, Programador y aprendiz de ADSO"
+ description='Portafolio Web para la busqueda de patrocinio y oportunidades de experiencia laboral'>
+	<main class="sm:px-[100px] md:px-[10px] px-2">
+		<SectionContainer id="inicio" class="py-28" >
+			<div class="justify-center items-center inline-flex gap-x-3">
+				<Image class='rounded-full size-[60px] my-5' src={CristianFoto} alt="Cristian Peña" loading='eager' /> 
+				 <span class="text-4xl md:text-5xl lg:text-6xl font-bold ">Hola Mundo!!👋 </span>
+			</div>
+			<h1 class="text-white lg:text-6xl md:text-5xl text-4xl font-bold justify-start flex flex-row gap-x-4 "> Soy Cristian Peña<a 
+				class="flex justify-center items-center hover:scale-110 hover:white/10 transition"
+				href="https://drive.google.com/uc?export=download&id=1I21vXRXsTSys9w44Oq4S5CzBiIGnGwBt"
+				target="_blank"
+				rel="noopener"><Badge><span class=" text-center items-center content-center place-items-center font-bold">Mi Hoja De Vida </span><Download /></Badge></a>
+		   </h1>
+		   
+			<h2 class="text-xl lg:text-2xl/[35px] opacity-80 text-wrap max-w-[700px] my-6">En Busca de Adquirir Experiencia Laboral. <span class="opacity-100 font-bold text-pretty">Aprendiz Del SENA</span> en Analisis y Desarrollo de Software. De <span class="text-red-300/80 text-pretty">Ibague, Tolima </span>😁 
+			<span class="font-bold underline text-2xl text-pretty ">Un Aprendiz dedicado a la busqueda de soluciones</span>
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<Socialpill href="https://www.linkedin.com/in/cristianandrespeña/">
+					<LinkeIn class="size-4 md:size-6" />LinkedIn
+				</Socialpill>
+				<Socialpill href="https://github.com/Crixpsitos">
+					<Github class= "size-4 md:size-6"/>Github
+				</Socialpill>
+				<Socialpill href="https://github.com/Crixpsitos">
+					<Mail class= "size-4 md:size-6"/>Contacto
+				</Socialpill>
+			</nav>
+
+		</SectionContainer>
+		<SectionContainer class:list={'py-3'} id="Proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Code class="size-7"/>Mis Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer id="sobre-mi" class:list={"pt-10"}>
+			<h2
+        	class="flex items-center mb-6 text-3xl font-semibold gap-x-4 text-white/80 dark:text-white"
+      		>
+			<ProfileCheck class="size-8" />
+			Sobre Mi
+			</h2>
+			<AboutMe />
+
+
+		</SectionContainer>
+
+		
+		
+	</main>
+</Layout>
+
